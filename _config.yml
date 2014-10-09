@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         redcarpet
-pygments:         true
+highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
@@ -9,13 +9,14 @@ permalink:        pretty
 title:            'David Dickson'
 tagline:          ''
 description:      'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://lanyon.getpoole.com
+url:              http://www.davidkdickson.com
+paginate:         5
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'David Dickson'
+  url:            https://twitter.com/davidkdickson
 
-paginate:         5
+
 
 # Custom vars
 version:          2.0.0
