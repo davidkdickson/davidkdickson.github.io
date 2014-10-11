@@ -41,7 +41,7 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: 'Didact Gothic', sans-serif;  
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56rem) {
   .container {
-    max-width: 38rem;
+    max-width: 54rem;
   }
 }
 
@@ -115,8 +115,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 48rem) {
-  .masthead-title {
-    text-align: center;
+  .masthead-title {    
   }
   .masthead-title small {
     display: none;
@@ -542,4 +541,20 @@ a.pagination-item:hover {
 .theme-base-0f .sidebar-toggle,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+/* Blog */
+.theme-base-blog .sidebar,
+.theme-base-blog .sidebar-toggle:active,
+.theme-base-blog #sidebar-checkbox:checked ~ .wrap .sidebar-toggle {
+  background-color: #45a6de;
+}
+.theme-base-blog .container a,
+.theme-base-blog .sidebar-toggle,
+.theme-base-blog .related-posts li a:hover {
+  color: #45a6de;
+}
+
+.pull-right {
+  float: right;
 }
