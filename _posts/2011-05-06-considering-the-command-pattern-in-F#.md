@@ -11,14 +11,60 @@ If we consider this pattern from a functional perspective, command objects are b
 
 Let’s look at a simple example. Say we are tasked to develop the software to control a robot by remote control. Following shows how we could implement this using the object oriented command pattern.
 
-<script src="https://gist.github.com/davidkdickson/5520563.js"></script>
-
+{% highlight FSharp %}
+type Robot(position, rotate) =     
+    let mutable (x,y) = position
+    let mutable rotation = rotate
+    member this.Move(distance) =
+      x <- x + (distance * sin (System.Math.PI/180.0 * rotation))
+      y <- y + (distance * cos (System.Math.PI/180.0 * rotation))
+    member this.Rotate(angle) = 
+    	let newRotation = 
+    		let nr = rotation + angle
+    		match nr with
+    		| n when n < 360.0 -> nr
+    		| _ -> nr - 360.0
+    	rotation <- newRotation
+ 
+type ICommand = 
+    abstract Execute : unit -> unit
+ 
+type Move(robot:Robot, distance) =
+    interface ICommand with 
+    	member this.Execute() = robot.Move(distance)
+ 
+type Rotate(robot:Robot, rotation) = 
+    interface ICommand with
+    	member this.Execute() = robot.Rotate(rotation)
+ 
+type RemoteControl(cmds: ICommand list) =
+    let commands = cmds
+    member this.RunCommands() = commands |> List.iter(fun c -> c.Execute())
+{% endhighlight %}
 
 ## Functional Solution
 
 Below shows how we could implement the robot example drawing on functional constructs:
 
-<script src="https://gist.github.com/davidkdickson/5531334.js"></script>
+{% highlight FSharp %}
+type Robot = {Position : float * float; Rotation : float}
+ 
+let move distance robot = 
+    let x2 = distance * sin (System.Math.PI/180.0 * robot.Rotation)        
+    let y2 = distance * cos (System.Math.PI/180.0 * robot.Rotation)
+    {robot with Position = (robot.Position |> fst) + x2, (robot.Position |> snd) + y2 }
+ 
+let rotate angle robot = 
+    let newRotation = 
+      let nr = robot.Rotation + angle
+    	match nr with
+    	| n when n < 360.0 -> nr
+    	| _ -> nr - 360.0
+    {robot with Rotation = newRotation}
+ 
+let remoteControl commands robot = 
+    commands |> List.fold(fun w c -> c w) robot
+{% endhighlight %}
 
 You will notice that in the functional solution there is no command interface defined. The reason for this is because F# has support for higher order functions. An object oriented way to understand a function is to think of it is an interface with a single method. Thus in a functional language like F# the single method command interface becomes unnecessary.
 
