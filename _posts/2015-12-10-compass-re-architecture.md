@@ -7,10 +7,10 @@ Early this year at [Compass](https://www.compass.co) we decided to significantly
 
 |                             | New Stack   | Old Stack  |
 | --------------------------- | :----------- | :---------- |
-| Database                    | PostgreSQL  | MongoDB    |
-| Inter-Process Communication | RabbitMQ    | RabbitMQ   |
-| Web Backend                 | Sinatra     | Rails      |
-| Web Front-end               | AngularJS   | AngularJS  |
+| Database                    | [PostgreSQL](http://www.postgresql.org/)  | [MongoDB](https://www.mongodb.org/)    |
+| Inter-Process Communication | [RabbitMQ](https://www.rabbitmq.com/)    | [RabbitMQ](https://www.rabbitmq.com/)   |
+| Web Backend                 | [Sinatra](http://www.sinatrarb.com/)     | [Rails](http://rubyonrails.org/)      |
+| Web Front-end               | [AngularJS](https://angularjs.org/)   | [AngularJS](https://angularjs.org/)  |
 
 
 It is now 6 months from our re-architecture and I wanted to discuss the outcomes from our move.
