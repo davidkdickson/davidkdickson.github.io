@@ -29,7 +29,7 @@ The biggest problem with our existing Rails application was that it didn't have 
 
 Since moving to Sinatra we have found it excellent for building out a web API layer. Its flexibility gave us control over what libraries we leverage in building out our application. Furthermore it's lightweight nature and simple method for specifying routes has given the team a restful focus, encouraging the separation between web and client we were striving for.
 
-One interesting positive side effect that we didn't anticipate is that leveraging a micro framework has helped our junior developers better understand web semantics. In having less ‘configuration magic’ there may have been greater ramp up time for our junior developers, however it forced them to gain a deeper understanding of how web applications are built.
+One interesting positive side effect that we didn't anticipate is that leveraging a micro framework has helped our junior developers better understand web semantics. In having less ‘configuration magic’ ramp up time for our junior developers maybe greater, however it has forced them to gain a deeper understanding of how web applications are built.
 
 ## Conclusion
-Six months on from our architectural changes and the team remains busy building out new features for Compass. Software is forever changing and am sure our stack will have significant evolutions and re-writes in the years to come. But as it stands the team remains happy with the architectural decisions made and is excited about evolving the platform in the years to come
+Six months on from our architectural changes and the team remains busy building out new features for Compass. Software is forever changing and am sure our stack will have significant evolutions and re-writes in the years to come. But as it stands the team remains happy with the architectural decisions made and is excited about evolving the platform.
