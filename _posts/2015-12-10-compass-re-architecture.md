@@ -16,7 +16,7 @@ Early this year at Compass we decided to significantly re-design our core produc
 It is now 6 months from our re-architecture and I wanted to discuss the outcomes from our move.
 
 ## MongoDB to PostgreSQL
-The problem we were finding with Mongo was that our data model was becoming a bit of a mess. As a reporting/benchmarking tool it is fundamental that Compass maintains a sound and consistent database. One of the fundamental features of MongoDB (schema less storage) was proving to be a significant pain point.
+The problem we were finding with Mongo was that our data model was becoming a bit of a mess. As a reporting and benchmarking tool it is fundamental that Compass maintains a sound and consistent database. One of the fundamental features of MongoDB (schema less storage) was proving to be a significant pain point.
 
 Having our storage engine define our schema has certainly been a positive decision. We often run algorithms over very flat data structures, as a result we found a relational data model actually mapped effectively to our problem space. Although there are certainly domains where persisting documents can increase productivity, this simply wasn't the case for us.
 
