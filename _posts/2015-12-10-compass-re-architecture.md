@@ -5,8 +5,8 @@ title: Compass Re-architecture
 
 Early this year at Compass we decided to significantly re-design our core product with a focus on making it self-service. This juncture was the perfect opportunity for us to also evaluate the technical stack we were leveraging. This evaluation lead to some specific changes as outlined below.
 
-|                             | :New Stack   | :Old Stack  |
-| --------------------------- | ----------- | ---------- |
+|                             | New Stack   | Old Stack  |
+| --------------------------- | :----------- | :---------- |
 | Database                    | PostgreSQL  | MongoDB    |
 | Inter-Process Communication | RabbitMQ    | RabbitMQ   |
 | Web Backend                 | Sinatra     | Rails      |
