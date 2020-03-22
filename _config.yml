@@ -1,7 +1,7 @@
 # Dependencies
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
-highlighter:      rogue
+highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
@@ -11,13 +11,11 @@ title:            'David Dickson'
 tagline:          ''
 description:      'My personal blog on technology and other things.'
 url:              http://www.davidkdickson.com
-paginate:         5
+paginate:         2
 
 author:
   name:           'David Dickson'
   url:            https://twitter.com/davidkdickson
-
-
 
 # Custom vars
 version:          2.0.0
