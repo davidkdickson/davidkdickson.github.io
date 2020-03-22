@@ -17,7 +17,7 @@ Cultural diversity plays a critical role when it comes to thinking out of the bo
 #### Productivity
 As team members are given autonomy to complete their work and control over their environment they can set up a workflow and workplace that best suits them, allowing them to optimize for productivity.
 
-### It feels like the future
+#### It feels like the future
 When I talk to others about the location of my team and how we are approaching distributed work excites me. There is little doubt that the nature of work is changing and to be at the forefront of this change is professionally satisfying.
 
 Often companies start hiring distributed workers and assume that their current processes will transfer into this new dynamic. This is a flawed assumption yet few organizations make the effort to reorient themselves. Below list some of the practices SAIL has adopted while transitioning into a distributed team.
