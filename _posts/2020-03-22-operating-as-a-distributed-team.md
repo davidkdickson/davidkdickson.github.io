@@ -15,7 +15,7 @@ With a distributed team as you open yourself up to a talent pool that extends be
 Cultural diversity plays a critical role when it comes to thinking out of the box with a number of studies showing that diversity helps bring out unconventional solutions and new ideas.  Having team members spread across the globe is a great way to foster such diversity.
 
 #### Productivity
-As team members are given autonomy to complete their work and control over their environment they can set up a workflow and workplace that best suits them, allowing them to optimize for productivity.
+As team members are given autonomy to complete their work and control over their environment they can set up a work flow and workplace that best suits them, allowing them to optimize for productivity.
 
 #### It feels like the future
 When I talk to others about the location of my team and how we are approaching distributed work excites me. There is little doubt that the nature of work is changing and to be at the forefront of this change is professionally satisfying.
@@ -24,6 +24,7 @@ When I talk to others about the location of my team and how we are approaching d
 Often companies start hiring distributed workers and assume that their current processes will transfer into this new dynamic. This is a flawed assumption yet few organizations make the effort to reorient themselves. Below list some of the practices SAIL has adopted while transitioning into a distributed team.
 
 # SAIL’s distributed team practices
+Taking inspiration from companies such as GitHub that have pioneered distributed approaches and speaking with peers in our network that run distributed workforces we came up with the following practices.
 
 #### Meetings
 If one of us is remote in a meeting, all should be on their laptop with their camera turned on. This removes the ability for those congregated in a meeting room to dismiss those remote and creates a level playing feed for discussion. Plan the agenda carefully and share it in advance.
