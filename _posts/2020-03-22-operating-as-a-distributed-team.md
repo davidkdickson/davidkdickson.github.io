@@ -24,7 +24,7 @@ When I talk to others about the location of my team and how we are approaching d
 Often companies start hiring distributed workers and assume that their current processes will transfer into this new dynamic. This is a flawed assumption yet few organizations make the effort to reorient themselves. Below list some of the practices SAIL has adopted while transitioning into a distributed team.
 
 # SAIL’s distributed team practices
-Taking inspiration from companies such as GitHub that have pioneered distributed teams, speaking to peers within our network that run distributed workforces, and iterating on our own approach we came up with some team practices. Below lists some of the key practices SAIL has adopted while evolving as a distributed team.
+Taking inspiration from companies such as GitHub that have pioneered distributed teams, speaking to peers within our network that run distributed workforces, and iterating on our own approach we came up with a set of conventions. Below lists some of these key practices SAIL has adopted while evolving as a distributed team.
 
 #### Meetings
 If one of us is remote in a meeting, all should be on their laptop with their camera turned on. This removes the ability for those congregated in a meeting room to dismiss those remote and creates a level playing feed for discussion. Plan the agenda carefully and share it in advance.
