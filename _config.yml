@@ -1,21 +1,21 @@
-# Dependencies
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "strikethrough", "superscript", "with_toc_data"]
-highlighter:      rouge
-
-# Permalinks
-permalink:        pretty
-
 # Setup
-title:            'David Dickson'
-tagline:          ''
-description:      'My personal blog on technology and other things.'
-url:              http://www.davidkdickson.com
-paginate:         2
+title:               David Dickson
+tagline:             'personal blog'
+description:         'Personal blog on technnology and related topics.'
+url:                 https://davidkdickson.com
+baseurl:             ''
+paginate:            5
+permalink:           pretty
 
+# About/contact
 author:
-  name:           'David Dickson'
-  url:            https://twitter.com/davidkdickson
+  name:              David Dickson
+  url:               https://twitter.com/davidkdickson
+
+# Gems
+plugins:
+  - jekyll-paginate
 
 # Custom vars
-version:          2.0.0
+version:             1.1.0
+google_analytics_id: UA-71269187-1
