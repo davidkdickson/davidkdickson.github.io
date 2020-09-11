@@ -4,7 +4,6 @@ tagline:             'personal blog'
 description:         'Personal blog on technnology and related topics.'
 url:                 https://davidkdickson.com
 baseurl:             ''
-paginate:            5
 permalink:           pretty
 
 # About/contact
