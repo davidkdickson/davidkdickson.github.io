@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rewriting parts of an Expression Tree in F#
+title: Rewriting parts of an expression tree in F#
 ---
 
 ## Background
@@ -31,10 +31,10 @@ Having identified the issue, I decided to come up with a function to rewrite the
 
 {% highlight FSharp %}
 let rec reWriteExpression  (exp:Expression) =
- 
-    let makeBinary e left right = Expression.MakeBinary(e, left, right) :> Expression 
- 
-    let modifyMethod (exp:BinaryExpression) = 
+
+    let makeBinary e left right = Expression.MakeBinary(e, left, right) :> Expression
+
+    let modifyMethod (exp:BinaryExpression) =
         match exp.NodeType with
         | ExpressionType.Equal as eq -> makeBinary eq exp.Left exp.Right
         | ExpressionType.GreaterThan as gt -> makeBinary gt exp.Left exp.Right
@@ -43,9 +43,9 @@ let rec reWriteExpression  (exp:Expression) =
         | ExpressionType.LessThanOrEqual as lte -> makeBinary lte exp.Left exp.Right
         | ExpressionType.NotEqual as ne -> makeBinary ne exp.Left exp.Right
         | _ -> makeBinary exp.NodeType (reWriteExpression exp.Left) (reWriteExpression exp.Right)
- 
+
     match exp with
-    | :? LambdaExpression -> 
+    | :? LambdaExpression ->
         let l = exp :?> LambdaExpression
         Expression.Lambda(l.Type, reWriteExpression l.Body, l.Parameters) :> Expression
     | :? BinaryExpression -> modifyMethod (exp :?> BinaryExpression)

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: The Composite Pattern in F#
+title: The composite pattern in F#
 ---
 
 Triggered by an interesting [stack overflow](http://stackoverflow.com/questions/327955/does-functional-programming-replace-gof-design-patterns) question on whether functional languages replace object oriented design patterns I decided to take a look at how you would implement various object oriented design patterns in a functional style. In this post I explore the [composite pattern.](http://en.wikipedia.org/wiki/Composite_pattern)
 
-## Object Oriented Example
+## Object oriented example
 
 Say we are designing a system for a fast food company where individual menu items have a price, and combinations of menu items can be ordered as “combo meals”. In this scenario we could apply the object oriented composite pattern as follows:
 
@@ -17,17 +17,17 @@ type Burger(p) =
     inherit MenuItem()
     let price = p
     override this.GetPrice() = p
- 
+
 type Side(p) =
     inherit MenuItem()
     let price = p
     override this.GetPrice() = p
- 
+
 type Drink(p) =
     inherit MenuItem()
     let price = p
     override this.GetPrice() = p
- 
+
 type Combo(items:List<MenuItem>) =
     inherit MenuItem()
     let menuItems = items
@@ -35,7 +35,7 @@ type Combo(items:List<MenuItem>) =
       menuItems |> List.fold (fun acc i -> i.GetPrice() + acc) 0.0
 {% endhighlight %}
 
-## Functional Version
+## Functional version
 
 In F# one of the basic functional types is the [discriminated union.](http://msdn.microsoft.com/en-us/library/dd233226.aspx) Discriminated unions provide support for values that can be one of a number of named cases, possibly each with different values and types. In addition discriminated unions can be recursive. As such we can implement the composite pattern in a single discriminated union.
 
@@ -54,6 +54,6 @@ let getPrice item =
     let rec calculatePrice item =
         match item with
         | Burger(price) | Drink(price) | Side(price) -> price
-        | Combo(items) -> 
+        | Combo(items) ->
             items |> List.fold (fun acc i -> acc + (calculatePrice i)) 0.0
 {% endhighlight %}

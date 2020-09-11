@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Considering the Command Pattern in F#
+title: Considering the command pattern in F#
 ---
 
 The [command pattern](http://en.wikipedia.org/wiki/Command_pattern) describes a way to represent actions in an application. It is used to encapsulate actions so that they can be invoked at some later point. We often see collections of commands that specify steps of a process or operations that the user can choose from. Below is an object oriented way of implementing this pattern.
@@ -12,31 +12,31 @@ If we consider this pattern from a functional perspective, command objects are b
 Let’s look at a simple example. Say we are tasked to develop the software to control a robot by remote control. Following shows how we could implement this using the object oriented command pattern.
 
 {% highlight FSharp %}
-type Robot(position, rotate) =     
+type Robot(position, rotate) =
     let mutable (x,y) = position
     let mutable rotation = rotate
     member this.Move(distance) =
       x <- x + (distance * sin (System.Math.PI/180.0 * rotation))
       y <- y + (distance * cos (System.Math.PI/180.0 * rotation))
-    member this.Rotate(angle) = 
-    	let newRotation = 
+    member this.Rotate(angle) =
+    	let newRotation =
     		let nr = rotation + angle
     		match nr with
     		| n when n < 360.0 -> nr
     		| _ -> nr - 360.0
     	rotation <- newRotation
- 
-type ICommand = 
+
+type ICommand =
     abstract Execute : unit -> unit
- 
+
 type Move(robot:Robot, distance) =
-    interface ICommand with 
+    interface ICommand with
     	member this.Execute() = robot.Move(distance)
- 
-type Rotate(robot:Robot, rotation) = 
+
+type Rotate(robot:Robot, rotation) =
     interface ICommand with
     	member this.Execute() = robot.Rotate(rotation)
- 
+
 type RemoteControl(cmds: ICommand list) =
     let commands = cmds
     member this.RunCommands() = commands |> List.iter(fun c -> c.Execute())
@@ -48,21 +48,21 @@ Below shows how we could implement the robot example drawing on functional const
 
 {% highlight FSharp %}
 type Robot = {Position : float * float; Rotation : float}
- 
-let move distance robot = 
-    let x2 = distance * sin (System.Math.PI/180.0 * robot.Rotation)        
+
+let move distance robot =
+    let x2 = distance * sin (System.Math.PI/180.0 * robot.Rotation)
     let y2 = distance * cos (System.Math.PI/180.0 * robot.Rotation)
     {robot with Position = (robot.Position |> fst) + x2, (robot.Position |> snd) + y2 }
- 
-let rotate angle robot = 
-    let newRotation = 
+
+let rotate angle robot =
+    let newRotation =
       let nr = robot.Rotation + angle
     	match nr with
     	| n when n < 360.0 -> nr
     	| _ -> nr - 360.0
     {robot with Rotation = newRotation}
- 
-let remoteControl commands robot = 
+
+let remoteControl commands robot =
     commands |> List.fold(fun w c -> c w) robot
 {% endhighlight %}
 
