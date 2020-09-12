@@ -39,7 +39,7 @@ type Combo(items:List<MenuItem>) =
 
 In F# one of the basic functional types is the [discriminated union.](http://msdn.microsoft.com/en-us/library/dd233226.aspx) Discriminated unions provide support for values that can be one of a number of named cases, possibly each with different values and types. In addition discriminated unions can be recursive. As such we can implement the composite pattern in a single discriminated union.
 
-{% highlight FSharp %}
+{% highlight fsharp %}
  type MenuItem =
     | Burger of double
     | Side of double
@@ -49,7 +49,7 @@ In F# one of the basic functional types is the [discriminated union.](http://msd
 
 One obvious difference between the functional and object oriented versions is the terseness that comes with using a discriminated union. Another is that the discriminated union publicly exposes the fact that a component is created by composition. However, this isn’t necessarily a bad design decision as it aligns with the functional emphasis on adding new functionality to existing types. This means that the GetPrice member does not need to be defined as part of the type. Instead it can be implemented independently of the type as a processing function.
 
-{% highlight FSharp %}
+{% highlight fsharp %}
 let getPrice item =
     let rec calculatePrice item =
         match item with

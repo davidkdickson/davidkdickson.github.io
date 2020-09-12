@@ -9,7 +9,7 @@ I am in the fortunate situation of working on a project where we make use of F# 
 
 For its persistence mechanism the application makes use of LINQ to SQL. Within the scripts we build adhoc queries using [F# quotations](http://msdn.microsoft.com/en-us/library/dd233212.aspx) that are subsequently transtated into LINQ expressions to query our repository. For example we make use of the [F# power pack's](http://fsharppowerpack.codeplex.com/) ToLinqExpression in the function below to convert a quotation into a consumable LINQ expression:
 
-{% highlight FSharp %}
+{% highlight fsharp %}
 let toLinq (exp : Expr<'a -> 'b>) =
     let linq = exp.ToLinqExpression()
     let call = linq :?> MethodCallExpression
@@ -29,7 +29,7 @@ When converted to a LINQ expression the implementing method for the binary opera
 
 Having identified the issue, I decided to come up with a function to rewrite the problematic parts of the returned expression tree. Below is what I came up with.
 
-{% highlight FSharp %}
+{% highlight fsharp %}
 let rec reWriteExpression  (exp:Expression) =
 
     let makeBinary e left right = Expression.MakeBinary(e, left, right) :> Expression

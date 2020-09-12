@@ -11,7 +11,7 @@ If we consider this pattern from a functional perspective, command objects are b
 
 Let’s look at a simple example. Say we are tasked to develop the software to control a robot by remote control. Following shows how we could implement this using the object oriented command pattern.
 
-{% highlight FSharp %}
+{% highlight fsharp %}
 type Robot(position, rotate) =
     let mutable (x,y) = position
     let mutable rotation = rotate
@@ -46,7 +46,7 @@ type RemoteControl(cmds: ICommand list) =
 
 Below shows how we could implement the robot example drawing on functional constructs:
 
-{% highlight FSharp %}
+{% highlight fsharp %}
 type Robot = {Position : float * float; Rotation : float}
 
 let move distance robot =
