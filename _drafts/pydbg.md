@@ -14,13 +14,13 @@ This post will focus on getting the basic stepping through code functionality wo
 the finished project checkout this [repository.](https://github.com/davidkdickson/pydbg)
 
 ## Setting a trace function
-As I began to develop my solution I was pleased to identify `sys.settrace(tracefunc)` a function within the `sys` module
-that sets the system’s trace function. The `tracefunc` callback you set will be triggered by the python virtual machine
-every time it enters or exits a function, processes a line of code or runs into an exception. Each of these callbacks
-also give full access to the current stack frame and code. Thus one way to implement stepping through source code would
-be to set this callback to my own implementation.
+As I began to develop my solution I was pleased to identify `sys.settrace(tracefunc)` a function that sets the system’s
+trace function. The `tracefunc` callback you set will be triggered by the python virtual machine every time it enters
+or exits a function, processes a line of code or runs into an exception. Each of these callbacks also give full access
+to the current stack frame and code. Thus one way to implement stepping through source code would be to set this
+callback to my own implementation.
 
-Below shows an example implementation thats sets such a callback and steps through a recursive fibonacci implementation.
+Below shows an example implementation thats sets such a callback and steps through a recursive factorial implementation.
 
 {% highlight python %}
 import sys
@@ -50,17 +50,16 @@ class Pydbg:
     def break_point(self):
         sys.settrace(self.trace_calls)
 
-
 if __name__ == "__main__":
     pydbg = Pydbg()
 
-    def fibonacci(n):
-        if n in [0, 1]:
-            return n
-        return fibonacci(n - 1) + fibonacci(n - 2)
+    def factorial(n):
+        if n == 0:
+            return 1
+        return n * factorial(n - 1)
 
     pydbg.break_point()
-    fibonacci(2)
+    print(factorial(3))
 {% endhighlight %}
 
 In this code once the breakpoint is set all subsequent calls will invoke the trace function which in turn calls
