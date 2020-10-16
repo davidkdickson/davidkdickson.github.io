@@ -20,7 +20,8 @@ or exits a function, processes a line of code or runs into an exception. Each of
 to the current stack frame and code. Thus one way to implement stepping through source code would be to set this
 callback to a custom implementation.
 
-Below shows an example [implementation](https://github.com/davidkdickson/pydbg/blob/master/examples/blog_example.py) thats sets such a callback and steps through a recursive factorial implementation.
+Below shows an example [implementation](https://github.com/davidkdickson/pydbg/blob/master/examples/blog_example.py) that
+sets such a callback and steps through a recursive factorial implementation.
 
 {% highlight python %}
 import sys
