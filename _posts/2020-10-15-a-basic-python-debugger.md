@@ -52,12 +52,8 @@ if __name__ == "__main__":
 
     pydbg.break_point()
     print(factorial(3))
-{% endhighlight %}
-
-And when run gives the following output.
 
 
-{% highlight zsh %}
 $ python blog_example.py
 blog_example.py:34:factorial
 -->     def factorial(n):
@@ -70,12 +66,6 @@ blog_example.py:37:factorial
 
 blog_example.py:34:factorial
 -->     def factorial(n):
-
-blog_example.py:35:factorial
--->         if n == 0:
-
-blog_example.py:37:factorial
--->         return n * factorial(n - 1)
 {% endhighlight %}
 
 
