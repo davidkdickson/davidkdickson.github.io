@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Operating as a distributed Team
+title: Operating as a distributed team
 ---
 
 At Sage AI Labs (SAIL) we have talented Engineers and Data Scientists spread across North America, Europe, Australia and often have to collaborate with teams in Asia. As a result the group has made a concerted effort to adopt techniques and processes that help us succeed as a distributed team.
