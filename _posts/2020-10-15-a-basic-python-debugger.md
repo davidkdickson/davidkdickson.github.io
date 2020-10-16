@@ -34,18 +34,9 @@ class Pydbg:
         line = f'{file}:{line}:{func}\n--> {code[idx]}'
         print(line)
 
-    def get_command(self):
-        return 's'
-
     def trace_calls(self, frame, event, arg):
         self.print_source(frame, event, arg)
-        self.cmd = self.get_command()
-
-        if self.cmd == 's':
-            return self.trace_calls
-
-        self.print_source(frame, event, arg)
-
+        return self.trace_calls
         raise 'Unknown command'
 
     def break_point(self):
