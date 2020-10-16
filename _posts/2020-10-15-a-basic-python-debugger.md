@@ -63,6 +63,31 @@ if __name__ == "__main__":
     print(factorial(3))
 {% endhighlight %}
 
+And when run gives the following output.
+
+
+{% highlight zsh %}
+$ python blog_example.py
+blog_example.py:34:factorial
+-->     def factorial(n):
+
+blog_example.py:35:factorial
+-->         if n == 0:
+
+blog_example.py:37:factorial
+-->         return n * factorial(n - 1)
+
+blog_example.py:34:factorial
+-->     def factorial(n):
+
+blog_example.py:35:factorial
+-->         if n == 0:
+
+blog_example.py:37:factorial
+-->         return n * factorial(n - 1)
+{% endhighlight %}
+
+
 In this example once the breakpoint is set all subsequent calls will invoke the trace function which in turn calls
 `print_source` to output the current line of source code being executed. Notice that `trace_calls` returns a reference
 to itself as it steps through the code. This is because `settrace` causes the callback to be invoked whenever a new local
