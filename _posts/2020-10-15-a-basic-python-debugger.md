@@ -70,7 +70,9 @@ blog_example.py:34:factorial
 
 
 In this example once the breakpoint is set all subsequent calls will invoke the trace function which in turn calls
-`print_source` to output the current line of source code being executed. Notice that `trace_calls` returns a reference
+`print_source` to output the current line of source code being executed.
+
+Notice that `trace_calls` returns a reference
 to itself as it steps through the code. This is because `settrace` causes the callback to be invoked whenever a new local
 scope is entered and expects the returning of a reference to the function that should be used for further tracing in that new
 scope. In the example above it was sufficient to return the same tracing function.
