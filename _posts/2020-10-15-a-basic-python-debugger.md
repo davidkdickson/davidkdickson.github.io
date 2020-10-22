@@ -14,7 +14,7 @@ This post will focus on getting the basic stepping through code functionality wo
 the finished project checkout this [repository.](https://github.com/davidkdickson/pydbg)
 
 ## Setting a trace function
-As I began to develop my solution I was pleased to identify `sys.settrace(trace_function)` a function that sets the system’s
+As I began to develop my solution I was pleased to identify `sys.settrace(trace_function)`, a function that sets the system’s
 trace function. The `trace_function` callback you set will be triggered by the python virtual machine every time it enters
 or exits a function, processes a line of code or runs into an exception. Each of these callbacks also give full access
 to the current stack frame and code. Thus one way to implement stepping through source code would be to set this
