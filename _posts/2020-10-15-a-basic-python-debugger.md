@@ -37,7 +37,6 @@ class Pydbg:
     def trace_calls(self, frame, event, arg):
         self.print_source(frame, event, arg)
         return self.trace_calls
-        raise 'Unknown command'
 
     def break_point(self):
         sys.settrace(self.trace_calls)
