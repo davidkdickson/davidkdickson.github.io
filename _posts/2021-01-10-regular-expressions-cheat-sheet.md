@@ -15,9 +15,8 @@ Throughout my career I found myself having to write regular expressions for vari
 the time to fully absorb the language and would find myself searching online for solutions or a reminder of the syntax.
 So as to consolidate my understanding once and for all I wrote myself this cheat sheet.
 
-## Character classes
-|    | Description                   |
-|----|-------------------------------|
+### Character classes
+
 | `.`  | any character except new line |
 | `\w` | word                          |
 | `\W` | not word                      |
@@ -26,9 +25,8 @@ So as to consolidate my understanding once and for all I wrote myself this cheat
 | `\s` | white space                   |
 | `\S` | not white space               |
 
-## Anchors
-|    | Description                   |
-|----|-------------------------------|
+### Anchors
+
 | `^`  | beginning of line             |
 | `\A` | beginning of input            |
 | `$`  | end of line                   |
@@ -36,9 +34,8 @@ So as to consolidate my understanding once and for all I wrote myself this cheat
 | `\b` | a word boundary               |
 | `\B` | a non word boundary           |
 
-## Quantifiers
-|       | Description                                   |
-|-------|-----------------------------------------------|
+### Quantifiers
+
 | `?`     | 0 or once                                     |
 | `*`     | 0 or more                                     |
 | `+`     | 1 or more                                     |
@@ -47,9 +44,8 @@ So as to consolidate my understanding once and for all I wrote myself this cheat
 | `{n,m}` | between n and m                               |
 | `x?`    | add ? to a quantifier to make it not greedy   |
 
-## Groups and ranges
-|               | Description                           |
-|---------------|---------------------------------------|
+### Groups and ranges
+
 | `a|b`           | a or b                                |
 | `[abc]`         | a, b or c                             |
 | `[^abc]`        | not (a or b or c)                     |
@@ -61,9 +57,8 @@ So as to consolidate my understanding once and for all I wrote myself this cheat
 | `\n`            | refers to matched group starting at 1 |
 | `(?P=name)`     | back reference to a named group       |
 
-## Assertions
-|                                       | Description           |
-|---------------------------------------|-----------------------|
+### Assertions
+
 | `(?=regex)`                           | lookahead positive    |
 | `(?!regex)`                           | lookahead negative    |
 | `(?<=regex)`                          | lookbehind positive   |
