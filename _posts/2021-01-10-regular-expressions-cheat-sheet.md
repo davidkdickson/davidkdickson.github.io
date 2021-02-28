@@ -66,12 +66,13 @@ So as to consolidate my understanding once and for all I wrote myself this cheat
 | `(?(<n>)<yes-regex>|<no-regex>)`      | group number          |
 | `(?(<name>)<yes-regex>|<no-regex>)`   | group name            |
 
-### Regular expressions in python
+### Regular expressions in Python
 
-| `re.search()` | first location where pattern produces a match |
-| `re.match()` | checks for a match at the beginning of the line |
-| `re.fullmatch()` | if entire string matches pattern |
-| `re.findall()` | returns a list |
-| `re.finditer()` | returns an iterator |
+| `re.search()`         | first location where pattern produces a match |
+| `re.match()`          | matches pattern at the beginning of string    |
+| `re.fullmatch()`      | whole string matches pattern                  |
+| `re.findall()`        | all non-overlapping matches of pattern        |
+| `re.finditer()`       | iterator yielding non-overlapping matches     |
+| `re.sub()`            | substitute pattern in string                  |
 
 By creating this cheat sheet my hope is to have consolidated my understanding of regular expression. While researching it was fun going a little deeper on some of the more advanced features such as lookaheads which definitely gave me a renewed appreciation of what is possible with the language.
