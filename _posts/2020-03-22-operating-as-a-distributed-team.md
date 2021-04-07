@@ -12,7 +12,7 @@ Distributed team members are not co-located and thus rarely see each other, this
 With a distributed team as you open yourself up to a talent pool that extends beyond geographic boundaries.
 
 #### Diverse team
-Cultural diversity plays a critical role when it comes to thinking out of the box with a number of studies showing that diversity helps bring out unconventional solutions and new ideas.  Having team members spread across the globe is a great way to foster such diversity.
+Cultural diversity plays a critical role when it comes to thinking outside of the box with a number of studies showing that diversity helps bring out unconventional solutions and new ideas.  Having team members spread across the globe is a great way to foster such diversity.
 
 #### Productivity
 As team members are given autonomy to complete their work and control over their environment they can set up a work flow and workplace that best suits them, allowing them to optimize for productivity.
